@@ -1,5 +1,7 @@
 {
   "expo": {
+
+    "sdkVersion": "44.0.0",
     "name": "SecondToDoToRNApp",
     "slug": "SecondToDoToRNApp",
     "version": "1.0.0",
@@ -20,6 +22,11 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.demo.secondapp",
+      "versionCode": 1,
+    
+      
+      
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

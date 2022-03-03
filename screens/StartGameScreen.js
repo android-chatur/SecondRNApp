@@ -8,13 +8,14 @@ import {
   Keyboard,
   Alert
 } from 'react-native';
-import TitleText from '../components/TitleText'
+
 import Card from '../components/Card';
 import Input from '../components/Input';
 import NumberContainer from '../components/NumberContainer';
-import colors from '../constants/colors';
 import BodyText from '../components/BodyText';
-
+import TitleText from '../components/TitleText';
+import MainButton from '../components/MainButton';
+import Colors from '../constants/colors';
 
 const StartGameScreen = props => {
   const [enteredValue, setEnteredValue] = useState('');
@@ -51,9 +52,11 @@ const StartGameScreen = props => {
   if (confirmed) {
     confirmedOutput = (
       <Card style={styles.summaryContainer}>
-        <Text>You selected</Text>
+        <BodyText>You selected</BodyText>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button title="START GAME" onPress={() => props.onStartGame(selectedNumber)} />
+        <MainButton onPress={() => props.onStartGame(selectedNumber)}>
+          START GAME
+        </MainButton>
       </Card>
     );
   }
@@ -83,14 +86,14 @@ const StartGameScreen = props => {
               <Button
                 title="Reset"
                 onPress={resetInputHandler}
-                color={colors.accent}
+                color={Colors.accent}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title="Confirm"
                 onPress={confirmInputHandler}
-                color={colors.primary}
+                color={Colors.primary}
               />
             </View>
           </View>
@@ -124,7 +127,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15
   },
   button: {
-    width: 90
+    width: 100
   },
   input: {
     width: 50,
